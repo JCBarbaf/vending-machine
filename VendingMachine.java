@@ -20,6 +20,18 @@ public class VendingMachine {
                 InventoryModule.showProducts();       
                 break;
             case "2":
+                System.out.print("How much money will you insert? ");
+                try {
+                    int quantity = Integer.parseInt(scanner.nextLine());
+                    if (quantity >= 0) {
+                        WalletModule.insertMoney(quantity);
+                        System.out.printf("%d cents inserted \n", quantity);
+                    } else {
+                        System.out.println("Error: negative quantity inserted");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Error: invalid quantity inserted");
+                }
                 break;
             case "3":
                 break;

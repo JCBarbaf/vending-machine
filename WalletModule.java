@@ -3,11 +3,13 @@ public class WalletModule {
     private static int moneyTotal;
 
     public static void init() {
+        moneyInserted = 0;
+        moneyTotal = 0;
 
     }
 
     public static void insertMoney(int quantity) {
-
+        moneyTotal += quantity;
     }
 
     public static int consultMoneyInserted() {

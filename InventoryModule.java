@@ -27,11 +27,26 @@ public class InventoryModule {
         return 1;
     }
 
-    public static void dispenseProduct(int productID) {
+    public static void dispenseProduct(int productID) throws Exception {
+        if (validProductId(productID)) {
+            if (productStocks[productID] > 0) {
+                try {
+                    WalletModule.processPayment(productPrices[productID]);
+                    productStocks[productID]--;
+                    System.out.println("Todo OK");
+                } catch (Exception e) {
+                    throw new Exception(e);
+                }
+            } else {
+                throw new Exception("There is not enough stock");
+            }
+        } else {
+            throw new Exception("Invalid product ID");
+        }
 
     }
 
     private static boolean validProductId (int productID) {
-        return true;
+        return !(productID < 0 || productID > productNames.length - 1);
     }
 }

@@ -1,30 +1,30 @@
 public class WalletModule {
-    private static int moneyInserted;
-    private static int moneyTotal;
+    private static int money;
 
     public static void init() {
-        moneyInserted = 0;
-        moneyTotal = 0;
+        money = 0;
 
     }
 
     public static void insertMoney(int quantity) {
-        moneyTotal += quantity;
+        money += quantity;
     }
 
-    public static int consultMoneyInserted() {
-        return moneyInserted;
+    public static int consultMoney() {
+        return money;
     }
 
-    public static boolean verifyEnoughMoney(int price) {
-        return true;
-    }
-
-    public static boolean processPayment(int price) {
-        return true;
+    public static void processPayment(int price) throws Exception{
+        if (money >= price) {
+            money -= price;
+        } else {
+            throw new Exception("Not enough money");
+        }
     }
 
     public static int returnChange() {
-        return 1;
+        int change = money;
+        money = 0;
+        return change;
     }
 }

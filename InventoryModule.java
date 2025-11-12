@@ -14,8 +14,10 @@ public class InventoryModule {
         System.out.println("| ID  | Product              | Price    | Stock |");
         System.out.println(hr);
         for (int i = 0; i < productNames.length; i++) {
-            System.out.printf("| %-3d | %-20s | %6.2f $ | %5d |\n", i, productNames[i], productPrices[i]/100.0, productStocks[i]);
-            System.out.println(hr);
+            if (productStocks[i] > 0) {
+                System.out.printf("| %-3d | %-20s | %6.2f $ | %5d |\n", i, productNames[i], productPrices[i]/100.0, productStocks[i]);
+                System.out.println(hr);
+            }
         }
     }
 
@@ -33,7 +35,7 @@ public class InventoryModule {
                 try {
                     WalletModule.processPayment(productPrices[productID]);
                     productStocks[productID]--;
-                    System.out.println("Todo OK");
+                    System.out.printf("Enjoy your %s", productNames[productID]);
                 } catch (Exception e) {
                     throw new Exception(e);
                 }

@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+//ToDo: Format error messages on buy product
+//ToDo: Add product display to buying option
+//ToDo: Format machine outputs and linebreaks
+//ToDo: CSV database
+//ToDo: restock option
 public class VendingMachine {
     public static void main(String[] args) {
         InventoryModule.init();

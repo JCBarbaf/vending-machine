@@ -37,7 +37,7 @@ public class InventoryModule {
                     productStocks[productID]--;
                     System.out.printf("Enjoy your %s", productNames[productID]);
                 } catch (Exception e) {
-                    throw new Exception(e);
+                    throw new Exception(e.getMessage());
                 }
             } else {
                 throw new Exception("There is not enough stock");

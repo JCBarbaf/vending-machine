@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-//ToDo: Format error messages on buy product
 //ToDo: Add product display to buying option
 //ToDo: Format machine outputs and linebreaks
 //ToDo: CSV database
@@ -48,12 +47,13 @@ public class VendingMachine {
                     System.out.printf("You have %.2f $ \n", money/100.0);
                     break;
                 case "4":
+                    InventoryModule.showProducts();
                     System.out.print("Insert the ID of the product you want to buy: ");
                     try {
                         int productID = Integer.parseInt(scanner.nextLine());
                         InventoryModule.dispenseProduct(productID);
                     } catch (Exception e) {
-                        System.out.println(e);
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case "5":

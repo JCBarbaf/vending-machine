@@ -11,16 +11,17 @@ public class VendingMachine {
         Scanner scanner = new Scanner(System.in);
         boolean repeat = true;
         int change = 0;
-        while (repeat) {        
-            System.out.println("\n--- Vending Machine ---");
-            System.out.println(
-                "1- See avaliable products \n" +
-                "2- Insert money \n" +
-                "3- Consult money \n" +
-                "4- Buy product \n" +
-                "5- Return change \n" +
-                "6- EXIT"
-            );
+        while (repeat) {
+            System.out.println("""
+
+--- Vending Machine ---
+1- See avaliable products
+2- Insert money
+3- Consult money
+4- Buy product
+5- Return change
+6- EXIT
+            """);
             System.out.print("What do you want to do? ");
             String userResponse = scanner.nextLine();
             System.out.println("\n");
@@ -67,7 +68,7 @@ public class VendingMachine {
                     System.out.println("Have a nice day ^_^");
                     repeat = false;
                     break;
-                    default:
+                default:
                     System.out.println("ERROR: please select a valid option");
                     break;
                 }

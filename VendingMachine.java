@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-//ToDo: Add product display to buying option
 //ToDo: Format machine outputs and linebreaks
 //ToDo: CSV database
 //ToDo: restock option

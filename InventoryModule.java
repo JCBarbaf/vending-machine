@@ -2,7 +2,8 @@ public class InventoryModule {
     private static String[] productNames;
     private static int[] productStocks;
     private static int[] productPrices;
-    private static String hr = "-------------------------------------------------";
+    private static final String HR_STRING = "-------------------------------------------------";
+    
     public static void init() {
         productNames = new String[] {"Coke", "Water", "Sparkling water", "Sandwitch", "KitKat", "Potato chips"};
         productStocks = new int[] {3, 5, 5, 2, 1, 5};
@@ -10,13 +11,13 @@ public class InventoryModule {
     }
 
     public static void showProducts() {
-        System.out.println(hr);
+        System.out.println(HR_STRING);
         System.out.println("| ID  | Product              | Price    | Stock |");
-        System.out.println(hr);
+        System.out.println(HR_STRING);
         for (int i = 0; i < productNames.length; i++) {
             if (productStocks[i] > 0) {
                 System.out.printf("| %-3d | %-20s | %6.2f $ | %5d |\n", i, productNames[i], productPrices[i]/100.0, productStocks[i]);
-                System.out.println(hr);
+                System.out.println(HR_STRING);
             }
         }
     }

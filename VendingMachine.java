@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-//ToDo: Format machine outputs and linebreaks
 //ToDo: CSV database
 //ToDo: restock option
 public class VendingMachine {
@@ -63,7 +62,9 @@ public class VendingMachine {
                 case "6":
                     System.out.println("Thanks for using the vending machine");
                     change = WalletModule.returnChange();
-                    System.out.printf("Here is your change: %.2f $ \n", change/100.0);
+                    if (change > 0) {
+                        System.out.printf("Here is your change: %.2f $ \n", change/100.0);
+                    }
                     System.out.println("Have a nice day ^_^");
                     repeat = false;
                     break;
